@@ -1,5 +1,13 @@
 .App {
+  margin-top: 2%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  min-height: 40vh; /* Ensures the app fills at least the whole viewport height */
+  background-color: white; /* Primary color */
+  color: black; /* Primary font color */
 }
 
 .App-logo {
@@ -14,20 +22,87 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100%; /* Ensures the header takes full width */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #800080; /* Purple for secondary color */
 }
 
+/* Added styles for mobile responsiveness */
+@media (max-width: 768px) {
+  .App-header {
+    font-size: calc(8px + 2vmin);
+    padding: 20px;
+  }
+
+  .App-logo {
+    height: 30vmin;
+  }
+
+  .App {
+    padding: 10px;
+  }
+
+  input, select, button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1em;
+  }
+}
+
+/* Additional styles for a more modern look */
+/* Rounded buttons */
+/* General button styles */
+button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+/* Hover effect for all buttons */
+button:hover {
+  background-color: #ff1493;
+}
+
+/* Trash can icon for delete buttons */
+button.delete {
+  position: relative;
+}
+
+button.delete::before {
+  content: "\f1f8";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+input, select {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1em;
+  border-radius: 4px;
+}
+
+input:focus, select:focus {
+  border-color: #ff69b4; /* Pinkish border on focus */
+  outline: none;
+}
+
+/* Keyframes for logo animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
